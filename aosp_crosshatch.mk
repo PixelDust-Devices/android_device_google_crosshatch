@@ -31,3 +31,7 @@ PRODUCT_BRAND := Android
 PRODUCT_NAME := aosp_crosshatch
 PRODUCT_DEVICE := crosshatch
 PRODUCT_MODEL := AOSP on crosshatch
+
+# Tethering
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
