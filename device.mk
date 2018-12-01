@@ -246,6 +246,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager
 
+# RCS
+PRODUCT_PACKAGES += \
+    PresencePolling \
+    RcsService
+
 # power HAL
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.pixel-libperfmgr
