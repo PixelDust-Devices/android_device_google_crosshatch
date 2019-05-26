@@ -883,6 +883,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_HDR_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 
+PRODUCT_PACKAGES += \
+    libdisplayconfig
+
 # To be removed?
 PRODUCT_PACKAGES += \
     libhwbinder.vendor \
@@ -916,3 +919,34 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Force triple frame buffers
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+
+# APEX
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.apex.updatable=true
+
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true
+
+# EUICC
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
+
+# Google Assistant
+PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
+
+# RCS
+PRODUCT_PACKAGES += \
+    com.android.ims.rcsmanager \
+    PresencePolling \
+    RcsService
+
+# Utilities
+PRODUCT_PACKAGES += \
+    libjson \
+    libtinyxml
+
+# WiFi
+PRODUCT_PACKAGES += \
+    libwifi-hal-qcom
