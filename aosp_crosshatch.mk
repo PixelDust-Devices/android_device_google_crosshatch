@@ -45,4 +45,6 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_NAME := aosp_crosshatch
 PRODUCT_DEVICE := crosshatch
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on crosshatch
+PRODUCT_MODEL := Pixel 3 XL
+
+$(call inherit-product-if-exists, vendor/google/crosshatch/crosshatch-vendor.mk)
