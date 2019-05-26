@@ -69,7 +69,8 @@ AB_OTA_UPDATER := true
 
 AB_OTA_PARTITIONS += \
     system \
-    dtbo
+    dtbo \
+    vendor
 
 ifneq ($(PRODUCT_BUILD_BOOT_IMAGE),false)
 AB_OTA_PARTITIONS += boot
@@ -154,6 +155,12 @@ ifeq ($(PRODUCT_NO_PRODUCT_PARTITION), true)
 # no system_ext partition as well
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 endif
+
+# vendor.img
+ifneq ($(PRODUCT_USE_DYNAMIC_PARTITIONS), true)
+BOARD_VENDORIMAGE_PARTITION_SIZE := 805306368
+endif
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 ifeq ($(PRODUCT_USE_DYNAMIC_PARTITIONS), true)
 BOARD_SUPER_PARTITION_GROUPS := google_dynamic_partitions
