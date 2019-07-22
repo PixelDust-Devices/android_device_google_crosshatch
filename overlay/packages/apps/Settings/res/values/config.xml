@@ -23,4 +23,7 @@
 
     <!-- Whether to show Connected MAC Randomization in Developer Options. -->
     <bool name="config_wifi_support_connected_mac_randomization">true</bool>
+
+    <!-- Smart Charging -->
+    <bool name="config_supportSmartCharging">true</bool>
 </resources>
