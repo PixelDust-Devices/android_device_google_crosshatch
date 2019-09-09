@@ -51,3 +51,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Enable iorapd readahead for app starts
 PRODUCT_PRODUCT_PROPERTIES += \
     iorapd.readahead.enable=true
+
+BOARD_PREBUILT_VENDORIMAGE := vendor/images/blueline/vendor.img
