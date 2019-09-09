@@ -53,3 +53,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Disable Camera Pinning by default for crosshatch targets
 PRODUCT_PRODUCT_PROPERTIES += \
     pinner.pin_camera=false
+
+BOARD_PREBUILT_VENDORIMAGE := vendor/images/crosshatch/vendor.img
