@@ -1,0 +1,2 @@
+# Let HardwareInfo read /sysfs/devices/soc0
+allow priv_app sysfs_soc:file r_file_perms;
