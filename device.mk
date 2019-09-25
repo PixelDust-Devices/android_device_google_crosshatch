@@ -644,7 +644,6 @@ endif
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.5.vendor:64 \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwifi-hal \
