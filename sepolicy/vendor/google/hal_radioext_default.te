@@ -21,6 +21,7 @@ allow hal_radioext_default hal_wifi_ext_hwservice:hwservice_manager find;
 allow hal_radioext_default hal_wifi_ext:binder call;
 
 userdebug_or_eng(`
+  allow hal_radioext_default radio_vendor_data_file:dir search;
   allow hal_radioext_default radio_vendor_data_file:dir create_dir_perms;
   allow hal_radioext_default radio_vendor_data_file:file create_file_perms;
 ')
