@@ -19,4 +19,7 @@
     <!-- Whether to display active edge category -->
     <bool name="has_active_edge">true</bool>
 
+    <!-- Whether to display notification light category -->
+    <bool name="has_notification_light">false</bool>
+
 </resources>
