@@ -3,3 +3,6 @@ allow system_server debugfs_system_ion_heap:file r_file_perms;
 
 # b/129561352: Access to cpufreq interface for battery saver experiments.
 allow system_server sysfs_devices_system_cpu:file w_file_perms;
+
+# Smart Charging
+allow system_server sysfs_batteryinfo:file { getattr open write };
