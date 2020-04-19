@@ -949,3 +949,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1 \
     ro.sf.blurs_are_expensive=1
+
+# Force triple frame buffers
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
