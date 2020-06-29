@@ -546,7 +546,9 @@ endif
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libwifi-hal \
     wificond \
     libwpa_client \
     WifiOverlay
@@ -946,7 +948,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjson \
     libtinyxml
-
-# WiFi
-PRODUCT_PACKAGES += \
-    libwifi-hal-qcom
