@@ -16,6 +16,8 @@
 
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
+COMMON_PATH := device/google/crosshatch
+
 include build/make/target/board/BoardConfigMainlineCommon.mk
 
 TARGET_BOARD_PLATFORM := sdm845
