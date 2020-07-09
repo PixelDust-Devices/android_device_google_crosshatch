@@ -34,6 +34,9 @@ allow ims radio_vendor_data_file:file create_file_perms;
 allowxperm ims self:socket ioctl msm_sock_ipc_ioctls;
 allowxperm ims self:udp_socket ioctl RMNET_IOCTL_EXTENDED;
 
+allow ims ctl_start_prop:property_service set;
+allow ims ctl_stop_prop:property_service set;
+
 r_dir_file(ims, sysfs_msm_subsys)
 r_dir_file(ims, sysfs_diag)
 
