@@ -47,11 +47,6 @@ BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += usbcore.autosuspend=7
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1d84000.ufshc
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_SOURCE := kernel/google/bluecross
-TARGET_KERNEL_CONFIG := pixeldust_defconfig
-BOARD_KERNEL_IMAGE_NAME := Image.lz4-dtb
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
@@ -61,7 +56,7 @@ BOARD_BOOT_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # DTBO partition definitions
-TARGET_NEEDS_DTBOIMAGE := true
+BOARD_PREBUILT_DTBOIMAGE := device/google/crosshatch-kernel/dtbo.img
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 TARGET_NO_KERNEL := false
@@ -299,61 +294,61 @@ ODM_MANIFEST_G013D_FILES := device/google/crosshatch/nfc/manifest_se_eSE1.xml
 TARGET_USES_MKE2FS := true
 
 # Kernel modules
-#ifeq (,$(filter-out blueline_kasan crosshatch_kasan, $(TARGET_PRODUCT)))
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(wildcard device/google/crosshatch-kernel/kasan/*.ko)
-#else ifeq (,$(filter-out blueline_kernel_debug_memory crosshatch_kernel_debug_memory, $(TARGET_PRODUCT)))
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(wildcard device/google/crosshatch-kernel/debug_memory/*.ko)
-#else ifeq (,$(filter-out blueline_kernel_debug_locking crosshatch_kernel_debug_locking, $(TARGET_PRODUCT)))
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(wildcard device/google/crosshatch-kernel/debug_locking/*.ko)
-#else ifeq (,$(filter-out blueline_kernel_debug_hang crosshatch_kernel_debug_hang, $(TARGET_PRODUCT)))
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(wildcard device/google/crosshatch-kernel/debug_hang/*.ko)
-#else ifeq (,$(filter-out blueline_kernel_debug_api crosshatch_kernel_debug_api, $(TARGET_PRODUCT)))
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(wildcard device/google/crosshatch-kernel/debug_api/*.ko)
-#else ifneq (,$(TARGET_PREBUILT_KERNEL))
+ifeq (,$(filter-out blueline_kasan crosshatch_kasan, $(TARGET_PRODUCT)))
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(wildcard device/google/crosshatch-kernel/kasan/*.ko)
+else ifeq (,$(filter-out blueline_kernel_debug_memory crosshatch_kernel_debug_memory, $(TARGET_PRODUCT)))
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(wildcard device/google/crosshatch-kernel/debug_memory/*.ko)
+else ifeq (,$(filter-out blueline_kernel_debug_locking crosshatch_kernel_debug_locking, $(TARGET_PRODUCT)))
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(wildcard device/google/crosshatch-kernel/debug_locking/*.ko)
+else ifeq (,$(filter-out blueline_kernel_debug_hang crosshatch_kernel_debug_hang, $(TARGET_PRODUCT)))
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(wildcard device/google/crosshatch-kernel/debug_hang/*.ko)
+else ifeq (,$(filter-out blueline_kernel_debug_api crosshatch_kernel_debug_api, $(TARGET_PRODUCT)))
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(wildcard device/google/crosshatch-kernel/debug_api/*.ko)
+else ifneq (,$(TARGET_PREBUILT_KERNEL))
     # If TARGET_PREBUILT_KERNEL is set, check whether there are modules packaged with that kernel
     # image. If so, use them, otherwise fall back to the default directory.
-#    TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES := \
-#        $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.ko)
-#    ifneq (,$(TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES))
-#        BOARD_VENDOR_KERNEL_MODULES += $(TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES)
-#    else
-#        BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/google/crosshatch-kernel/*.ko)
-#    endif
+    TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES := \
+        $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.ko)
+    ifneq (,$(TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES))
+        BOARD_VENDOR_KERNEL_MODULES += $(TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES)
+    else
+        BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/google/crosshatch-kernel/*.ko)
+    endif
     # Do NOT delete TARGET_PREBUILT..., it will lead to empty BOARD_VENDOR_KERNEL_MODULES.
-#else
-#BOARD_VENDOR_KERNEL_MODULES += \
-#    $(wildcard device/google/crosshatch-kernel/*.ko)
-#endif
+else
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(wildcard device/google/crosshatch-kernel/*.ko)
+endif
 
 # DTB
-#ifeq (,$(filter-out blueline_kasan crosshatch_kasan, $(TARGET_PRODUCT)))
-#BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/kasan
-#else ifeq (,$(filter-out blueline_kernel_debug_memory crosshatch_kernel_debug_memory, $(TARGET_PRODUCT)))
-#BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_memory
-#else ifeq (,$(filter-out blueline_kernel_debug_locking crosshatch_kernel_debug_locking, $(TARGET_PRODUCT)))
-#BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_locking
-#else ifeq (,$(filter-out blueline_kernel_debug_hang crosshatch_kernel_debug_hang, $(TARGET_PRODUCT)))
-#BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_hang
-#else ifeq (,$(filter-out blueline_kernel_debug_api crosshatch_kernel_debug_api, $(TARGET_PRODUCT)))
-#BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_api
-#else ifneq (,$(TARGET_PREBUILT_KERNEL))
+ifeq (,$(filter-out blueline_kasan crosshatch_kasan, $(TARGET_PRODUCT)))
+BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/kasan
+else ifeq (,$(filter-out blueline_kernel_debug_memory crosshatch_kernel_debug_memory, $(TARGET_PRODUCT)))
+BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_memory
+else ifeq (,$(filter-out blueline_kernel_debug_locking crosshatch_kernel_debug_locking, $(TARGET_PRODUCT)))
+BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_locking
+else ifeq (,$(filter-out blueline_kernel_debug_hang crosshatch_kernel_debug_hang, $(TARGET_PRODUCT)))
+BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_hang
+else ifeq (,$(filter-out blueline_kernel_debug_api crosshatch_kernel_debug_api, $(TARGET_PRODUCT)))
+BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel/debug_api
+else ifneq (,$(TARGET_PREBUILT_KERNEL))
     # If TARGET_PREBUILT_KERNEL is set, check whether there are dtb files packaged with that kernel
     # image. If so, use them, otherwise fall back to the default directory.
-#    PREBUILT_PREBUILT_DTBIMAGE_DIR := $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.dtb)
-#    ifneq (,$(PREBUILT_PREBUILT_DTBIMAGE_DIR)
-#        BOARD_PREBUILT_DTBIMAGE_DIR := $(dir $(TARGET_PREBUILT_KERNEL))
-#    else
-#        BOARD_PREBUILT_DTBIMAGE_DIR += device/google/crosshatch-kernel
-#    endif
-#    PREBUILT_VENDOR_KERNEL_MODULES :=
-#else
-#BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel
-#endif
+    PREBUILT_PREBUILT_DTBIMAGE_DIR := $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.dtb)
+    ifneq (,$(PREBUILT_PREBUILT_DTBIMAGE_DIR)
+        BOARD_PREBUILT_DTBIMAGE_DIR := $(dir $(TARGET_PREBUILT_KERNEL))
+    else
+        BOARD_PREBUILT_DTBIMAGE_DIR += device/google/crosshatch-kernel
+    endif
+    PREBUILT_VENDOR_KERNEL_MODULES :=
+else
+BOARD_PREBUILT_DTBIMAGE_DIR := device/google/crosshatch-kernel
+endif
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/b1c1-setup.sh
