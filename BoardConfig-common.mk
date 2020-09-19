@@ -15,6 +15,7 @@
 #
 
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 
 include build/make/target/board/BoardConfigMainlineCommon.mk
 
