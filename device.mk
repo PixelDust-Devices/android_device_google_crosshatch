@@ -961,6 +961,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     chre
 
+# To be removed?
+PRODUCT_PACKAGES += \
+    libhwbinder.vendor \
+    libhidltransport.vendor
+
 # Vendor verbose logging default property
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PROPERTY_OVERRIDES += \
