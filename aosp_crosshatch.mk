@@ -41,12 +41,6 @@ $(call inherit-product-if-exists, vendor/google_devices/crosshatch/proprietary/d
 
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
-# STOPSHIP deal with Qualcomm stuff later
-# PRODUCT_RESTRICT_VENDOR_FILES := all
-
-PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
-
-
 PRODUCT_MANUFACTURER := Google
 PRODUCT_NAME := aosp_crosshatch
 PRODUCT_DEVICE := crosshatch
