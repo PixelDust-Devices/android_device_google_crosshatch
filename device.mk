@@ -895,9 +895,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true
 
-# wow
-PRODUCT_HOST_PACKAGES += brotli
-
 # Force triple frame buffers
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3
