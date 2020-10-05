@@ -904,7 +904,12 @@ include hardware/google/pixel/thermal/device.mk
 # power HAL
 -include hardware/google/pixel/power-libperfmgr/aidl/device.mk
 
-# Build necessary packages for vendor
+# Build necessary packages for system from AOSP
+PRODUCT_PACKAGES += \
+    libmediaplayerservice \
+    libstagefright_httplive:64
+
+# Build necessary packages for vendor from AOSP
 PRODUCT_PACKAGES += \
     chre \
     ese_spi_nxp:64 \
@@ -912,6 +917,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail_vendor:32 \
     libcodec2_hidl@1.0.vendor:32 \
     libcodec2_vndk.vendor \
+    libcppbor.vendor:64 \
     libdisplayconfig \
     libdrm.vendor \
     libhidltransport.vendor \
@@ -930,6 +936,7 @@ PRODUCT_PACKAGES += \
     libpuresoftkeymasterdevice.vendor:64 \
     libsensorndkbridge \
     libsoft_attestation_cert.vendor:64 \
+    libteeui_hal_support.vendor:64 \
     libtinycompress \
     libtinyxml \
     libwifi-hal:64 \
