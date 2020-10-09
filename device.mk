@@ -951,6 +951,7 @@ PRODUCT_PACKAGES += \
     libnosprotos:64 \
     libnos_transport:64 \
     libpuresoftkeymasterdevice.vendor:64 \
+    libsdsprpc \
     libsensorndkbridge \
     libsoft_attestation_cert.vendor:64 \
     libteeui_hal_support.vendor:64 \
