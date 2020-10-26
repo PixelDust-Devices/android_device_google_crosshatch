@@ -23,4 +23,7 @@
 
     <!-- Whether to show Connected MAC Randomization in Developer Options. -->
     <bool name="config_wifi_support_connected_mac_randomization">true</bool>
+
+    <!-- Whether to show BatteryHealth preference in Power Settings. -->
+    <bool name="config_supportBatteryHealth">false</bool>
 </resources>
