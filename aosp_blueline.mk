@@ -57,6 +57,9 @@ PRODUCT_DEVICE := blueline
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 3
 
+# Match stock product info
+PRODUCT_OVERRIDE_INFO := true
+
 LOCAL_PATH := device/google/crosshatch
 
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/blueline.prop
