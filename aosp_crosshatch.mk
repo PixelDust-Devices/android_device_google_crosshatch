@@ -51,9 +51,14 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/
 
 PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 
-
 PRODUCT_MANUFACTURER := Google
 PRODUCT_NAME := aosp_crosshatch
 PRODUCT_DEVICE := crosshatch
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on crosshatch
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Pixel 3 XL
+
+# Match stock product info
+PRODUCT_OVERRIDE_INFO := true
+PRODUCT_OVERRIDE_NAME := crosshatch
+PRODUCT_OVERRIDE_FINGERPRINT := google/crosshatch/crosshatch:11/RP1A.201005.004/6782484:user/release-keys
+PRODUCT_OVERRIDE_DESC := crosshatch-user 11 RP1A.201005.004 6782484 release-keys
