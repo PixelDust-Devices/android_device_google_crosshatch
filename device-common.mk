@@ -144,3 +144,7 @@ WITH_GMS_FI := true
 # Parts
 PRODUCT_PACKAGES += \
     GoogleParts
+
+# Enable zygote critical window.
+PRODUCT_PROPERTY_OVERRIDES += \
+    zygote.critical_window.minute=10
