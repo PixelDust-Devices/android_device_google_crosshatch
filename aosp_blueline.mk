@@ -57,8 +57,6 @@ PRODUCT_DEVICE := blueline
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 3
 
-# Match stock product info
-PRODUCT_OVERRIDE_INFO := true
-PRODUCT_OVERRIDE_NAME := blueline
-PRODUCT_OVERRIDE_FINGERPRINT := google/blueline/blueline:11/RP1A.201005.004/6782484:user/release-keys
-PRODUCT_OVERRIDE_DESC := blueline-user 11 RP1A.201005.004 6782484 release-keys
+LOCAL_PATH := device/google/crosshatch
+
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/blueline.prop
