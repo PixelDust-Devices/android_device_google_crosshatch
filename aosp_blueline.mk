@@ -51,14 +51,10 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/
 
 PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 
+
 PRODUCT_MANUFACTURER := Google
 PRODUCT_NAME := aosp_blueline
 PRODUCT_DEVICE := blueline
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 3
 
-# Match stock product info
-PRODUCT_OVERRIDE_INFO := true
-PRODUCT_OVERRIDE_NAME := blueline
-PRODUCT_OVERRIDE_FINGERPRINT := google/blueline/blueline:11/RP1A.201105.002/6869500:user/release-keys
-PRODUCT_OVERRIDE_DESC := blueline-user 11 RP1A.201105.002 6869500 release-keys
