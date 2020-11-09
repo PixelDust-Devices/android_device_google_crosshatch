@@ -55,10 +55,10 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_NAME := aosp_blueline
 PRODUCT_DEVICE := blueline
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Pixel 3
+PRODUCT_MODEL := Pixel 5
 
 # Match stock product info
 PRODUCT_OVERRIDE_INFO := true
-PRODUCT_OVERRIDE_NAME := blueline
-PRODUCT_OVERRIDE_FINGERPRINT := google/blueline/blueline:11/RP1A.201005.004/6782484:user/release-keys
-PRODUCT_OVERRIDE_DESC := blueline-user 11 RP1A.201005.004 6782484 release-keys
+PRODUCT_OVERRIDE_NAME := redfin
+PRODUCT_OVERRIDE_FINGERPRINT := google/redfin/redfin:11/RD1A.201105.003.C1/6886399:user/release-keys
+PRODUCT_OVERRIDE_DESC := redfin-user 11 RD1A.201105.003.C1 6886399 release-keys
