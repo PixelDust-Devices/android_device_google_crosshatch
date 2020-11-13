@@ -1,0 +1,7 @@
+# Pixel identification
+ro.build.fingerprint=google/redfin/redfin:11/RD1A.201105.003.C1/6886399:user/release-keys
+ro.product.manufacturer=Google
+ro.product.device=blueline
+ro.product.brand=google
+ro.product.name=redfin
+ro.product.model=Pixel 5

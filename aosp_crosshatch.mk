@@ -55,10 +55,8 @@ PRODUCT_MANUFACTURER := Google
 PRODUCT_NAME := aosp_crosshatch
 PRODUCT_DEVICE := crosshatch
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Pixel 5
+PRODUCT_MODEL := Pixel 3 XL
 
-# Match stock product info
-PRODUCT_OVERRIDE_INFO := true
-PRODUCT_OVERRIDE_NAME := redfin
-PRODUCT_OVERRIDE_FINGERPRINT := google/redfin/redfin:11/RD1A.201105.003.C1/6886399:user/release-keys
-PRODUCT_OVERRIDE_DESC := redfin-user 11 RD1A.201105.003.C1 6886399 release-keys
+LOCAL_PATH := device/google/crosshatch
+
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/crosshatch.prop
