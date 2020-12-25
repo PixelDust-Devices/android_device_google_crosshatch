@@ -147,3 +147,7 @@ PRODUCT_SAFETYNET_MODEL_HACK := true
 
 # GMS
 WITH_GMS_FI := true
+
+# Parts
+PRODUCT_PACKAGES += \
+    GoogleParts
