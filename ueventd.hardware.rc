@@ -18,7 +18,7 @@
 firmware_directories /vendor/firmware_mnt/image/
 
 # the DIAG device node is not world writable/readable.
-/dev/diag                 0660   system     diag
+/dev/diag                 0666   system     diag
 
 /dev/wlan                 0666   system     system
 /dev/kgsl-3d0             0666   system     system
