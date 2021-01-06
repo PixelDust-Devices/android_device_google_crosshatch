@@ -1,3 +1,7 @@
+# Audio
+product/etc/firmware/music_detector.descriptor
+product/etc/firmware/music_detector.sound_model
+
 # CNE
 product/etc/cne/Nexus/ATT/ATT_profiles.xml
 product/etc/cne/Nexus/ROW/ROW_profiles.xml
