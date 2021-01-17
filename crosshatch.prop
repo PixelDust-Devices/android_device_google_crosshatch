@@ -1,7 +1,7 @@
 # Pixel identification
-ro.build.fingerprint=google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys
+ro.build.fingerprint=google/crosshatch/crosshatch:11/RQ1A.210105.003/7005429:user/release-keys
 ro.product.manufacturer=Google
 ro.product.device=crosshatch
 ro.product.brand=google
-ro.product.name=redfin
-ro.product.model=Pixel 5
+ro.product.name=crosshatch
+ro.product.model=Pixel 3 XL
