@@ -1,5 +1,5 @@
 # Pixel identification
-ro.build.fingerprint=google/blueline/blueline:11/RQ1D.210205.004/7038035:user/release-keys
+ro.build.fingerprint=google/blueline/blueline:11/RQ2A.210305.006-7119741:user/release-keys
 ro.product.manufacturer=Google
 ro.product.device=blueline
 ro.product.brand=google
