@@ -200,4 +200,11 @@
             <instance>wigighostapd</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.aospa.power</name>
+        <interface>
+            <name>IPowerFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
