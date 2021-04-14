@@ -1,14 +1,38 @@
 [
     {
-        "target_path":  "device/google/crosshatch",
-        "repository":   "android_device_google_crosshatch",
+        "target_path":  "device/google/crosshatch-sepolicy",
+        "repository":   "android_device_google_crosshatch-sepolicy",
         "remote":       "pdd",
         "revision":     "11"
     },
     {
-        "target_path":  "device/google/crosshatch-sepolicy",
-        "repository":   "android_device_google_crosshatch-sepolicy",
-        "remote":       "pdd",
+        "target_path":  "hardware/qcom/sdm845/bt",
+        "repository":   "platform/hardware/qcom/sdm845/bt",
+        "remote":       "aosp",
+        "revision":     "refs/tags/android-11.0.0_r34"
+    },
+    {
+        "target_path":  "hardware/qcom/sdm845/data/ipacfg-mgr",
+        "repository":   "android_hardware_qcom_sdm845_data_ipacfg-mgr",
+        "remote":       "pd11",
+        "revision":     "11"
+    },
+    {
+        "target_path":  "hardware/qcom/sdm845/gps",
+        "repository":   "platform/hardware/qcom/sdm845/gps",
+        "remote":       "aosp",
+        "revision":     "refs/tags/android-11.0.0_r34"
+    },
+    {
+        "target_path":  "hardware/qcom/sdm845/display",
+        "repository":   "android_hardware_qcom_sdm845_display",
+        "remote":       "pd11",
+        "revision":     "11"
+    },
+    {
+        "target_path":  "hardware/qcom/sdm845/media",
+        "repository":   "android_hardware_qcom_sdm845_media",
+        "remote":       "pd11",
         "revision":     "11"
     },
     {
