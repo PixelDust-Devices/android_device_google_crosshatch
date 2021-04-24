@@ -30,11 +30,11 @@ product/priv-app/EuiccSupportPixel/esim-full-v0.img
 product/priv-app/EuiccSupportPixel/esim-v1.img
 
 # FeliCaClient
--product/app/MobileFeliCaClient/MobileFeliCaClient.apk
--product/app/MobileFeliCaMenuMainApp/MobileFeliCaMenuMainApp.apk
--product/app/MobileFeliCaSettingApp/MobileFeliCaSettingApp.apk
--product/app/MobileFeliCaWebPlugin/MobileFeliCaWebPlugin.apk
--product/app/MobileFeliCaWebPluginBoot/MobileFeliCaWebPluginBoot.apk
+-product/app/MobileFeliCaClient/MobileFeliCaClient.apk;PRESIGNED
+-product/app/MobileFeliCaMenuMainApp/MobileFeliCaMenuMainApp.apk;PRESIGNED
+-product/app/MobileFeliCaSettingApp/MobileFeliCaSettingApp.apk;PRESIGNED
+-product/app/MobileFeliCaWebPlugin/MobileFeliCaWebPlugin.apk;PRESIGNED
+-product/app/MobileFeliCaWebPluginBoot/MobileFeliCaWebPluginBoot.apk;PRESIGNED
 
 # SecureUI
 -product/app/com.qualcomm.qti.services.secureui/com.qualcomm.qti.services.secureui.apk
