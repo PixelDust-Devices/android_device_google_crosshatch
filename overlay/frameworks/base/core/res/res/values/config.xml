@@ -431,4 +431,8 @@
 
     <!-- Whether the device has native Active Edge support -->
     <bool name="config_has_elmyra">true</bool>
+
+    <!-- List of comma separated package names for which we the system will not show crash, ANR,
+         etc. dialogs. -->
+    <string translatable="false" name="config_appsNotReportingCrashes">com.google.android.euicc</string>
 </resources>
