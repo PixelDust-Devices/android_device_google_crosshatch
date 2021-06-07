@@ -51,6 +51,6 @@
         "target_path":  "vendor/pixelgapps",
         "repository":   "pixeldust-eleven/android_vendor_pixelgapps",
         "remote":       "gitlab",
-        "branch":       "11"
+        "revision":     "11"
     }
 ]
