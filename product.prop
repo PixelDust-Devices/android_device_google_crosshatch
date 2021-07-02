@@ -109,3 +109,8 @@ drm.service.enabled=true
 media.mediadrmservice.enable=true
 ro.hardware.egl=adreno
 ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
+
+#
+## fastbootd visibility in advanced reboot
+#
+ro.fastbootd.available=true
