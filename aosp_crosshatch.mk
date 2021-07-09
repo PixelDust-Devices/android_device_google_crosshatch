@@ -59,6 +59,9 @@ PRODUCT_MODEL := Pixel 3 XL
 
 # Match stock product info
 PRODUCT_OVERRIDE_INFO := true
+PRODUCT_OVERRIDE_NAME := crosshatch
+PRODUCT_OVERRIDE_FINGERPRINT := google/crosshatch/crosshatch:11/RQ3A.210705.001/7380771:user/release-keys
+PRODUCT_OVERRIDE_DESC := crosshatch-user 11 RQ3A.210705.001 7380771 release-keys
 
 LOCAL_PATH := device/google/crosshatch
 
