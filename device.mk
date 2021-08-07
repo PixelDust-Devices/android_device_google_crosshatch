@@ -846,7 +846,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.svn=52
+    ro.vendor.build.svn=53
 
 # pixel atrace HAL
 PRODUCT_PACKAGES += \
