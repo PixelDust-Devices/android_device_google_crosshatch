@@ -34,6 +34,8 @@ REMOVE_GAPPS_PACKAGES += \
     pixel_experience_2020 \
     NetworkPermissionConfigGoogle \
     NetworkStackGoogle \
+    Flipendo \
+    SCONE \
 
 # Product properties
 PRODUCT_NAME := blueline
