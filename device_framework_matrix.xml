@@ -86,6 +86,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>android.hardware.graphics.allocator</name>
+        <version>4.0</version>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>android.hardware.health.storage</name>
         <version>1.0</version>
         <interface>
@@ -130,13 +138,6 @@
         <name>android.hardware.power</name>
         <interface>
             <name>IPower</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.identity</name>
-        <interface>
-            <name>IIdentityCredentialStore</name>
             <instance>default</instance>
         </interface>
     </hal>
