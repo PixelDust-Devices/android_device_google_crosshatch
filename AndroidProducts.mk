@@ -24,10 +24,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/vf/aosp_crosshatch_vf.mk \
 
 COMMON_LUNCH_CHOICES := \
-    aosp_crosshatch-userdebug \
     crosshatch-userdebug \
+    crosshatch-user \
     crosshatch-eng \
-    aosp_blueline-userdebug \
     blueline-userdebug \
+    blueline-user \
     blueline-eng \
-    aosp_crosshatch_vf-userdebug \

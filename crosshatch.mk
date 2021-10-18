@@ -17,5 +17,30 @@
 # Inherit AOSP product configuration
 $(call inherit-product, device/google/crosshatch/aosp_crosshatch.mk)
 
-# Remove AOSP prefix from product name
+# Bootanimation
+BOOTANIMATION := 1440
+
+# Ignore selinux neverallows
+SELINUX_IGNORE_NEVERALLOWS := true
+
+# Google Apps
+WITH_GMS := true
+DEVICE_REQUIRES_CARRIER_APPS := true
+REMOVE_GAPPS_PACKAGES += \
+    pixel_2016_exclusive \
+    pixel_experience_2019_midyear \
+    pixel_experience_2019 \
+    pixel_experience_2020_midyear \
+    pixel_experience_2020 \
+    NetworkPermissionConfigGoogle \
+    NetworkStackGoogle \
+
+# Product properties
 PRODUCT_NAME := crosshatch
+PRODUCT_DEVICE := crosshatch
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Pixel 3 XL
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.pixeldust.maintainer="spezi77" \
+    ro.pixeldust.device="crosshatch"
