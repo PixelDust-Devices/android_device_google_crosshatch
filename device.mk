@@ -402,6 +402,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.bluetooth.emb_wp_mode=false \
     ro.vendor.bluetooth.wipower=false
 
+# Gralloc
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@3.0-impl \
+    android.hardware.graphics.allocator@4.0-impl \
+
 # HEH filename encryption is being dropped
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.filenames_mode=aes-256-cts
@@ -725,7 +731,6 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.frameworks.stats@1.0.vendor \
     android.hardware.biometrics.fingerprint@2.1-service.fpc
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.fingerprint.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.fingerprint.sh \
@@ -972,6 +977,27 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.6 \
     vendor.display.config@1.7 \
     vendor.display.config@1.8
+
+# Additional vendor packages from AOSP
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
+    android.frameworks.stats@1.0.vendor \
+    android.hardware.authsecret@1.0.vendor \
+    android.hardware.biometrics.fingerprint@2.2.vendor \
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.drm@1.4.vendor \
+    android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.keymaster@3.0.vendor \
+    android.hardware.keymaster@4.0.vendor \
+    android.hardware.neuralnetworks@1.3.vendor \
+    android.hardware.oemlock@1.0.vendor \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio@1.3.vendor \
+    android.hardware.sensors@2.0.vendor \
+    android.hardware.weaver@1.0.vendor \
+    android.hardware.wifi@1.5.vendor \
+    android.system.net.netd@1.1.vendor
 
 # EUICC
 PRODUCT_COPY_FILES += \
