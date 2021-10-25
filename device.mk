@@ -23,10 +23,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/qcom/sdm845 \
     vendor/google/camera \
     vendor/qcom/sdm845 \
-    vendor/google/interfaces \
-    vendor/google_devices/common/proprietary/confirmatioui_hal \
-    vendor/google_nos/host/android \
-    vendor/google_nos/test/system-test-harness
+    vendor/google/interfaces
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
@@ -356,6 +353,15 @@ PRODUCT_PACKAGES += \
     gralloc.sdm845 \
     android.hardware.graphics.mapper@2.0-impl-qti-display \
     vendor.qti.hardware.display.allocator@1.0-service
+    
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio@1.3.vendor \
+    android.hardware.authsecret@1.0.vendor \
+    android.system.net.netd@1.1.vendor \
+    android.hardware.weaver@1.0.vendor \
+    android.hardware.neuralnetworks@1.3.vendor 
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -385,6 +391,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti
 
@@ -401,22 +408,35 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.bluetooth.emb_wp_mode=false \
     ro.vendor.bluetooth.wipower=false
 
-# Gralloc
-PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@3.0-impl \
-    android.hardware.graphics.allocator@4.0-impl \
-
 # HEH filename encryption is being dropped
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.volume.filenames_mode=aes-256-cts
 
 # DRM HAL
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4.vendor \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey \
     android.hardware.drm@1.3-service.widevine
+    
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor \
+    
+# OEMLock
+PRODUCT_PACKAGES += \
+    android.hardware.oemlock@1.0.vendor
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0.vendor \
+    android.frameworks.sensorservice@1.0.vendor
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0.vendor \
+    android.hardware.keymaster@4.0.vendor
 
 # NFC and Secure Element packages
 PRODUCT_PACKAGES += \
@@ -456,6 +476,20 @@ PRODUCT_PACKAGES += \
     libOmxVdecHevc \
     libOmxVenc \
     libc2dcolorconvert
+
+# NOS
+PRODUCT_PACKAGES += \
+    libnos \
+    libnos_client_citadel \
+    libnosprotos \
+    nos_app_avb \
+    nos_app_keymaster \
+    nos_app_weaver
+
+# Codec2
+PRODUCT_PACKAGES += \
+    libcodec2_vndk.vendor \
+    libcodec2_hidl@1.0.vendor
 
 # Enable Codec 2.0
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -563,6 +597,10 @@ endif
 
 # Wifi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.5.vendor \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom \
+    libwifi-hal \
     wificond \
     libwpa_client \
     WifiOverlay
@@ -730,6 +768,8 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
+    android.frameworks.stats@1.0.vendor \
+    android.hardware.biometrics.fingerprint@2.2.vendor \
     android.hardware.biometrics.fingerprint@2.1-service.fpc
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.fingerprint.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.fingerprint.sh \
@@ -887,6 +927,40 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.has_HDR_display=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_color_management=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 
+PRODUCT_PACKAGES += \
+    libdisplayconfig \
+    vendor.display.config@1.8 \
+    vendor.display.config@1.8.vendor
+
+# APEX
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.apex.updatable=true
+
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true
+
+# h!os
+PRODUCT_HOST_PACKAGES += brotli
+
+# Google Assistant
+PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
+
+# IPA config
+PRODUCT_PACKAGES += \
+    IPACM_cfg.xml
+
+# Utilities
+PRODUCT_PACKAGES += \
+    libjson \
+    libtinyxml \
+    libsdsprpc
+
+# Context Hub Runtime Environment
+PRODUCT_PACKAGES += \
+    chre
+
 # Vendor verbose logging default property
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -902,7 +976,6 @@ PRODUCT_PACKAGES += \
 
 # Pixel Logger
 include hardware/google/pixel/PixelLogger/PixelLogger.mk
-
 include hardware/google/pixel/pixelstats/device.mk
 include hardware/google/pixel/mm/device_legacy.mk
 include hardware/google/pixel/thermal/device.mk
@@ -924,84 +997,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set system properties identifying the chipset
 PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM845
-
-# Build necessary packages for system from AOSP
-PRODUCT_PACKAGES += \
-    libmediaplayerservice \
-    libstagefright_httplive:64
-
-# Build necessary packages for vendor from AOSP
-PRODUCT_PACKAGES += \
-    chre \
-    ese_spi_nxp:64 \
-    hardware.google.light@1.0.vendor \
-    libavservices_minijail_vendor:32 \
-    libcodec2_hidl@1.0.vendor:32 \
-    libcodec2_vndk.vendor \
-    libcppbor.vendor:64 \
-    libdisplayconfig \
-    libdrm.vendor \
-    libhidltransport.vendor \
-    libhwbinder.vendor \
-    libjson \
-    libkeymaster_messages.vendor:64 \
-    libkeymaster_portable.vendor:64 \
-    libnetfilter_conntrack:64 \
-    libnfnetlink:64 \
-    libnos:64 \
-    libnos_client_citadel:64 \
-    libnos_datagram:64 \
-    libnos_datagram_citadel:64 \
-    libnosprotos:64 \
-    libnos_transport:64 \
-    libpuresoftkeymasterdevice.vendor:64 \
-    libsdsprpc \
-    libsensorndkbridge \
-    libsoft_attestation_cert.vendor:64 \
-    libteeui_hal_support.vendor:64 \
-    libtinycompress \
-    libtinyxml \
-    libwifi-hal:64 \
-    libwifi-hal-qcom \
-    nos_app_avb:64 \
-    nos_app_identity:64 \
-    nos_app_keymaster:64 \
-    nos_app_weaver:64 \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@1.1.vendor \
-    vendor.display.config@1.2.vendor \
-    vendor.display.config@1.3.vendor \
-    vendor.display.config@1.0 \
-    vendor.display.config@1.1 \
-    vendor.display.config@1.2 \
-    vendor.display.config@1.3 \
-    vendor.display.config@1.4 \
-    vendor.display.config@1.5 \
-    vendor.display.config@1.6 \
-    vendor.display.config@1.7 \
-    vendor.display.config@1.8
-
-# Additional vendor packages from AOSP
-PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
-    android.frameworks.stats@1.0.vendor \
-    android.hardware.authsecret@1.0.vendor \
-    android.hardware.biometrics.fingerprint@2.2.vendor \
-    android.hardware.bluetooth@1.0.vendor \
-    android.hardware.drm@1.4.vendor \
-    android.hardware.gatekeeper@1.0.vendor \
-    android.hardware.keymaster@3.0.vendor \
-    android.hardware.keymaster@4.0.vendor \
-    android.hardware.neuralnetworks@1.3.vendor \
-    android.hardware.oemlock@1.0.vendor \
-    android.hardware.radio.config@1.1.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.radio@1.3.vendor \
-    android.hardware.sensors@2.0.vendor \
-    android.hardware.weaver@1.0.vendor \
-    android.hardware.wifi@1.5.vendor \
-    android.system.net.netd@1.1.vendor
-
 # EUICC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
