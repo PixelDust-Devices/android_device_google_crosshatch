@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=log
 
+# Adaptive charging
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/adaptivecharging.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/adaptivecharging.xml
+
 # Enable on-access verification of priv apps. This requires fs-verity support in kernel.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.apk_verity.mode=1
