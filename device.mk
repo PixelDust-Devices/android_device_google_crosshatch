@@ -930,7 +930,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 
 PRODUCT_PACKAGES += \
     libdisplayconfig \
+    vendor.display.config@1.0 \
     vendor.display.config@1.8 \
+    vendor.display.config@1.0.vendor \
     vendor.display.config@1.3.vendor
 
 # APEX
