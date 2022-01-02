@@ -39,3 +39,6 @@ endif
 # Disable DM-verity
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
+
+# NDK platform
+NEED_AIDL_NDK_PLATFORM_BACKEND := true
