@@ -409,8 +409,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.0-impl-qti \
-    android.hardware.bluetooth@1.0-service-qti \
-    libldacBT_bco
+    android.hardware.bluetooth@1.0-service-qti
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
