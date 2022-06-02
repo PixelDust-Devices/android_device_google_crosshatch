@@ -602,6 +602,9 @@ on property:sys.boot_completed=1
     # Disable sched_boost
     write /proc/sys/kernel/sched_boost 0
 
+    # Set the default mic gain to 20dB
+    write /sys/kernel/sound_control/mic_gain 20
+
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
 
