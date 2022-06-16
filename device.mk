@@ -873,7 +873,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.lmk.log_stats=true
 
 # default usb oem functions
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+ifneq (,$(filter usOVERLerdebug eng, $(TARGET_BUILD_VARIANT)))
   PRODUCT_PROPERTY_OVERRIDES += \
       persist.vendor.usb.usbradio.config=diag
 endif
@@ -899,6 +899,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.svn=64
+
+ifneq ($(filter crosshatch,$(KSCOPE_BUILD)),)
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    device/google/crosshatch/crosshatch/overlay-kscope/frameworks/base/packages/overlays/NoCutoutOverlay
+endif
 
 # pixel atrace HAL
 PRODUCT_PACKAGES += \
