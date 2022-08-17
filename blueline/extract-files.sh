@@ -62,6 +62,9 @@ function blob_fixup() {
     vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.txt)
         sed -i '7 a\mcfg_sw/generic/China/CMCC/Commercial/Volte_OpenMkt/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/AGNSS_LocTech/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/Conf_VoLTE/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/EPS_Only/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/LPP_LocTech/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/Nsiot_VoLTE/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/RRLP_LocTech/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/TGL_Comb_Attach/mcfg_sw.mbn\nmcfg_sw/generic/China/CMCC/Lab/W_IRAT_Comb_Attach/mcfg_sw.mbn\nmcfg_sw/generic/China/CT/Commercial/hVoLTE_OpenMkt/mcfg_sw.mbn\nmcfg_sw/generic/China/CT/Commercial/OpenMkt/mcfg_sw.mbn\nmcfg_sw/generic/China/CT/Commercial/VoLTE_OpenMkt/mcfg_sw.mbn\nmcfg_sw/generic/China/CU/Commercial/OpenMkt/mcfg_sw.mbn\nmcfg_sw/generic/China/CU/Commercial/VoLTE/mcfg_sw.mbn' "${2}"
         ;;
+    system_ext/lib64/libpowerstatshaldataprovider.so)
+        "${PATCHELF}" --replace-needed "android.hardware.power.stats-V1-ndk_platform.so" "android.hardware.power.stats-V1-ndk.so" "${2}"
+        ;;
     esac
 }
 
