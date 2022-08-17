@@ -68,6 +68,9 @@ function blob_fixup() {
     vendor/bin/hw/android.hardware.rebootescrow-service.citadel)
         "${PATCHELF}" --replace-needed "android.hardware.rebootescrow-V1-ndk_platform.so" "android.hardware.rebootescrow-V1-ndk.so" "${2}"
         ;;
+    vendor/lib64/hw/com.qti.chi.override.so)
+        "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
+        ;;
     esac
 }
 
