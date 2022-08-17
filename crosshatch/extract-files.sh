@@ -65,6 +65,9 @@ function blob_fixup() {
     system_ext/lib64/libpowerstatshaldataprovider.so)
         "${PATCHELF}" --replace-needed "android.hardware.power.stats-V1-ndk_platform.so" "android.hardware.power.stats-V1-ndk.so" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.rebootescrow-service.citadel)
+        "${PATCHELF}" --replace-needed "android.hardware.rebootescrow-V1-ndk_platform.so" "android.hardware.rebootescrow-V1-ndk.so" "${2}"
+        ;;
     esac
 }
 
