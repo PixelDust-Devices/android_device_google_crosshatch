@@ -71,6 +71,9 @@ function blob_fixup() {
     vendor/lib64/hw/com.qti.chi.override.so)
         "${PATCHELF}" --replace-needed "android.hardware.power-V1-ndk_platform.so" "android.hardware.power-V1-ndk.so" "${2}"
         ;;
+    vendor/bin/hw/vendor.qti.media.c2@1.0-service)
+        "${PATCHELF}" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "${2}"
+        ;;
     esac
 }
 
