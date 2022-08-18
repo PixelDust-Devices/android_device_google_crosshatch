@@ -967,6 +967,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libsdsprpc
 
+# Shims
+PRODUCT_PACKAGES += \
+    lib-secureuishim
+
 # Camera Extensions
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \

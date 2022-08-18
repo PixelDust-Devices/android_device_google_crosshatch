@@ -35,7 +35,7 @@ system_ext/priv-app/EuiccSupportPixel/esim-v1.img
 # SecureUI
 -product/app/com.qualcomm.qti.services.secureui/com.qualcomm.qti.services.secureui.apk
 product/lib/libsecureuisvc_jni.so
-product/lib64/libsecureuisvc_jni.so
+product/lib64/libsecureuisvc_jni.so|822e7364414d2cfdf7c607b40803f802cf0a8f9f
 
 # Vendor partition
 -vendor/app/TimeService/TimeService.apk
