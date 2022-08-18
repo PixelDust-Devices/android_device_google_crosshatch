@@ -65,8 +65,13 @@ function blob_fixup() {
     vendor/bin/hw/vendor.qti.media.c2@1.0-service)
         "${PATCHELF}" --replace-needed "libavservices_minijail_vendor.so" "libavservices_minijail.so" "${2}"
         ;;
+    product/lib/libsecureuisvc_jni.so)
+        ;&
     product/lib64/libsecureuisvc_jni.so)
         "${PATCHELF}" --add-needed "lib-secureuishim.so" "${2}"
+        for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
+            "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
+        done
         ;;
     esac
 }
