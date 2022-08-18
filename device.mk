@@ -961,6 +961,10 @@ PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
 PRODUCT_PACKAGES += \
     IPACM_cfg.xml
 
+# Shims
+PRODUCT_PACKAGES += \
+    lib-secureuishim
+
 # Utilities
 PRODUCT_PACKAGES += \
     libjson \
