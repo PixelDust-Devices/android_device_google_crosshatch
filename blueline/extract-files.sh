@@ -73,6 +73,13 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
         done
         ;;
+        product/lib/libsecureuisvc_jni.so)
+            ;&
+        product/lib64/libsecureuisvc_jni.so)
+            for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
+            done
+            ;;
     esac
 }
 
