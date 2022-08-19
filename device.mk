@@ -1061,6 +1061,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM845
 
+# Shims
+PRODUCT_PACKAGES += \
+    android.frameworks.stats-V1-ndk_platform.vendor:64 \
+    android.hardware.identity-V3-ndk_platform.vendor:64 \
+    android.hardware.keymaster-V3-ndk_platform.vendor:64 \
+    android.hardware.power-V1-ndk_platform.vendor:64 \
+    android.hardware.rebootescrow-V1-ndk_platform.vendor:64
+
 # Soong Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     packages/modules/Bluetooth/android/app
