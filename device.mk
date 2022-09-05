@@ -374,6 +374,14 @@ PRODUCT_PACKAGES += \
     android.hardware.weaver@1.0.vendor:64 \
     android.hardware.neuralnetworks@1.3.vendor:64
 
+# NDK Platform backend
+PRODUCT_PACKAGES += \
+    android.frameworks.stats-V1-ndk_platform.vendor:64 \
+    android.hardware.identity-V3-ndk_platform.vendor:64 \
+    android.hardware.keymaster-V3-ndk_platform.vendor:64 \
+    android.hardware.power-V1-ndk_platform.vendor:64 \
+    android.hardware.rebootescrow-V1-ndk_platform.vendor:64
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
