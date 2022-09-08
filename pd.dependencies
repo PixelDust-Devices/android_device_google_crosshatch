@@ -3,24 +3,18 @@
         "target_path":  "device/google/crosshatch-sepolicy",
         "repository":   "android_device_google_crosshatch-sepolicy",
         "remote":       "pdd",
-        "revision":     "12"
+        "revision":     "13"
     },
     {
         "target_path":  "kernel/google/bluecross",
         "repository":   "android_kernel_google_bluecross",
         "remote":       "pdd",
-        "revision":     "12"
-    },
-    {
-        "target_path":  "hardware/qcom/sdm845/display",
-        "repository":   "android_hardware_qcom_sdm845_display",
-        "remote":       "pd12",
-        "revision":     "12"
+        "revision":     "13"
     },
     {
         "target_path":  "vendor/google",
         "repository":   "android_vendor_google",
         "remote":       "pdd",
-        "revision":     "12"
+        "revision":     "13"
     }
 ]
