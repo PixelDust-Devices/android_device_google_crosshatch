@@ -366,13 +366,33 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator@1.0-service
     
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.1.vendor:64 \
+    android.hardware.radio.config@1.2.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64 \
-    android.hardware.radio@1.3.vendor:64 \
+    android.hardware.radio@1.5.vendor:64 \
+    android.hardware.secure_element@1.2.vendor:64 \
     android.hardware.authsecret@1.0.vendor:64 \
     android.system.net.netd@1.1.vendor:64 \
     android.hardware.weaver@1.0.vendor:64 \
-    android.hardware.neuralnetworks@1.3.vendor:64
+    android.hardware.neuralnetworks@1.3.vendor:64 \
+    libavservices_minijail.vendor:64
+
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
+# VNDK FWK detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect.vendor \
+    libvndfwk_detect_jni.qti.vendor
 
 # NDK Platform backend
 PRODUCT_PACKAGES += \
