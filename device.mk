@@ -376,24 +376,6 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor:64 \
     libavservices_minijail.vendor:64
 
-# Telephony
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
-# VNDK FWK detect
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor \
-    libvndfwk_detect_jni.qti.vendor
-
 # NDK Platform backend
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk_platform.vendor:64 \
