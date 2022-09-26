@@ -418,8 +418,25 @@ PRODUCT_PACKAGES += \
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth@1.1.vendor \
+    hardware.google.bluetooth.sar@1.0 \
+    hardware.google.bluetooth.sar@1.0.vendor \
+    hardware.google.bluetooth.bt_channel_avoidance@1.0 \
+    hardware.google.bluetooth.bt_channel_avoidance@1.0.vendor
+
+# QTI Bluetooth Packages
+PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl-qti \
-    android.hardware.bluetooth@1.0-service-qti
+    android.hardware.bluetooth@1.0-service-qti \
+    com.dsi.ant@1.0.vendor \
+    com.qualcomm.qti.bluetooth_audio@1.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
+    libldacBT_enc \
+    libldacBT_abr \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -663,6 +680,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio@2.1-impl \
+    android.hardware.bluetooth.audio-V2-ndk \
     android.hardware.audio.service
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
