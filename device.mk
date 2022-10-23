@@ -370,15 +370,13 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator@1.0-service
     
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.config@1.1.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64 \
-    android.hardware.radio@1.5.vendor:64 \
-    android.hardware.secure_element@1.2.vendor:64 \
+    android.hardware.radio@1.3.vendor:64 \
     android.hardware.authsecret@1.0.vendor:64 \
     android.system.net.netd@1.1.vendor:64 \
     android.hardware.weaver@1.0.vendor:64 \
-    android.hardware.neuralnetworks@1.3.vendor:64 \
-    libavservices_minijail.vendor:64
+    android.hardware.neuralnetworks@1.3.vendor:64
 
 # NDK Platform backend
 PRODUCT_PACKAGES += \
