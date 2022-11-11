@@ -12,6 +12,12 @@
         "revision":     "13"
     },
     {
+         "target_path": "packages/apps/GoogleCamera",
+         "repository":  "PixelBoot/packages_apps_GoogleCamera",
+         "remote":      "gitlab",
+         "revision":    "thirteen"
+    },
+    {
         "target_path":  "vendor/google",
         "repository":   "android_vendor_google",
         "remote":       "pdd",

@@ -1017,6 +1017,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lib-secureuishim
 
+# Camera
+PRODUCT_PACKAGES += \
+    GcamPrebuilt
+
 # Camera Extensions
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
