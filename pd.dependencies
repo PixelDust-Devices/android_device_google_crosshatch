@@ -1,0 +1,8 @@
+[
+    {
+         "target_path": "packages/apps/GoogleCamera",
+         "repository":  "PixelBoot/packages_apps_GoogleCamera",
+         "remote":      "gitlab",
+         "revision":    "thirteen"
+    }
+]
