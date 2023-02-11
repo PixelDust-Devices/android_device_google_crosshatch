@@ -748,7 +748,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 # Setup Dalvik VM configurations
-$(call inherit-product, vendor/pixeldust/configs/phone-xhdpi-4096-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 ifneq ($(filter %_mainline,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
