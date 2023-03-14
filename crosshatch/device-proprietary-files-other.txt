@@ -8,8 +8,6 @@ product/etc/felica/mfm.cfg
 product/etc/felica/mfs.cfg
 
 # Bluetooth
-system_ext/lib64/libaptX_encoder.so
-system_ext/lib64/libaptXHD_encoder.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 
 # Hotword
