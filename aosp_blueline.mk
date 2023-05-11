@@ -69,3 +69,18 @@ MODULE_BUILD_FROM_SOURCE := true
 LOCAL_PATH := device/google/crosshatch
 
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/blueline.prop
+
+# Overlay packages for APK-type modules
+PRODUCT_PACKAGES += \
+    GoogleDocumentsUIOverlay \
+    ModuleMetadataGoogleOverlay \
+    GooglePermissionControllerOverlay \
+    GooglePermissionControllerFrameworkOverlay \
+    GoogleExtServicesConfigOverlay \
+    CaptivePortalLoginFrameworkOverlay
+
+# Mainline modules - APK type
+PRODUCT_PACKAGES += \
+    com.google.android.modulemetadata \
+    DocumentsUIGoogle \
+    CaptivePortalLoginGoogle
