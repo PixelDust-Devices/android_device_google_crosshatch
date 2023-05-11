@@ -64,6 +64,8 @@ PRODUCT_DEVICE := blueline
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 3
 
+MODULE_BUILD_FROM_SOURCE := true
+
 LOCAL_PATH := device/google/crosshatch
 
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/blueline.prop
