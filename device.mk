@@ -85,6 +85,9 @@ $(call inherit-product, $(LOCAL_PATH)/utils.mk)
 #    BUILD_WITHOUT_VENDOR := true
 #endif
 
+# Use prebuilt kernel binary
+TARGET_PREBUILT_KERNEL := device/google/crosshatch-kernel/Image.lz4
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/google/crosshatch-kernel/Image.lz4
 else
