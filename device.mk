@@ -1079,3 +1079,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Set system properties identifying the chipset
 PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM845
+
+# Soong Namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    packages/modules/Bluetooth/android/app
