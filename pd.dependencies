@@ -18,8 +18,8 @@
          "revision":    "thirteen"
     },
     {
-        "target_path":  "vendor/google",
-        "repository":   "android_vendor_google",
+        "target_path":  "vendor/google/crosshatch",
+        "repository":   "android_vendor_google_crosshatch",
         "remote":       "pdd",
         "revision":     "13"
     }
