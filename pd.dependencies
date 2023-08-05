@@ -12,6 +12,12 @@
         "revision":     "13"
     },
     {
+        "target_path":  "external/wpa_supplicant_8",
+        "repository":   "platform/external/wpa_supplicant_8",
+        "remote":       "aosp",
+        "revision":     "android13-qpr3-release"
+    },
+    {
          "target_path": "packages/apps/GoogleCamera",
          "repository":  "PixelBoot/packages_apps_GoogleCamera",
          "remote":      "gitlab",
