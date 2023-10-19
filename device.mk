@@ -1085,6 +1085,10 @@ PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SDM845
 PRODUCT_SOONG_NAMESPACES += \
     packages/modules/Bluetooth/android/app
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite-3.9.1-vendorcompa
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full.so
