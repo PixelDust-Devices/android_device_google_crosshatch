@@ -478,8 +478,13 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0.vendor \
-    android.hardware.keymaster@4.0.vendor
+    android.hardware.keymaster@3.0.vendor:32 \
+    android.hardware.keymaster@4.0.vendor:32 \
+    android.hardware.keymaster@4.1.vendor:64
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0.vendor:64
 
 # NFC and Secure Element packages
 PRODUCT_PACKAGES += \
@@ -992,6 +997,11 @@ PRODUCT_PRODUCT_PROPERTIES += ro.opa.eligible_device=true
 # IPA config
 PRODUCT_PACKAGES += \
     IPACM_cfg.xml
+
+# Nos
+PRODUCT_PACKAGES += \
+    libkeymaster4support.vendor:64 \
+    libkeymaster4_1support.vendor:64
 
 # Utilities
 PRODUCT_PACKAGES += \
