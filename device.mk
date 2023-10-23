@@ -526,21 +526,6 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libc2dcolorconvert
 
-# NOS
-PRODUCT_PACKAGES += \
-    libnos:64 \
-    libnos_client_citadel:64 \
-    libnos_datagram:64 \
-    libnos_datagram_citadel:64 \
-    libnosprotos:64 \
-    libnos_transport:64 \
-    libpuresoftkeymasterdevice.vendor:64 \
-    libteeui_hal_support.vendor:64 \
-    nos_app_avb:64 \
-    nos_app_identity:64 \
-    nos_app_keymaster:64 \
-    nos_app_weaver:64
-
 # Codec2
 PRODUCT_PACKAGES += \
     libcodec2_vndk.vendor \
