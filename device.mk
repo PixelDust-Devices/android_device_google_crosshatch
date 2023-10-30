@@ -423,20 +423,6 @@ PRODUCT_PACKAGES += \
     hardware.google.bluetooth.bt_channel_avoidance@1.0 \
     hardware.google.bluetooth.bt_channel_avoidance@1.0.vendor
 
-# QTI Bluetooth Packages
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl-qti \
-    android.hardware.bluetooth@1.0-service-qti \
-    com.dsi.ant@1.0.vendor \
-    com.qualcomm.qti.bluetooth_audio@1.0 \
-    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
-    libldacBT_enc \
-    libldacBT_abr \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
-
 # Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee
@@ -460,8 +446,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.3.vendor \
-    android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.3-service.widevine
+    android.hardware.drm-service.clearkey
     
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -551,17 +536,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.transcoding.codec_max_operating_rate_4k=120 \
 
 PRODUCT_PACKAGES += \
-    libqcodec2 \
-    vendor.qti.media.c2@1.0-service \
-    codec2.vendor.ext.policy \
-    codec2.vendor.base.policy
-
-PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
-    camera.device@3.2-impl \
-    camera.sdm845 \
-    libcameradepthcalibrator
+    camera.device@3.2-impl
 
 # Google Camera HAL test libraries in debug builds
 PRODUCT_PACKAGES_DEBUG += \
@@ -569,10 +546,7 @@ PRODUCT_PACKAGES_DEBUG += \
     libgoogle_camera_hal_tests
 
 PRODUCT_PACKAGES += \
-    sensors.$(PRODUCT_HARDWARE) \
-    android.hardware.sensors@2.0-impl \
-    android.hardware.sensors@2.0-service \
-    android.hardware.sensors@2.0-service.rc
+    sensors.$(PRODUCT_HARDWARE)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:vendor/etc/sensors/hals.conf
@@ -625,7 +599,6 @@ endif
 PRODUCT_PACKAGES += $(HOSTAPD)
 
 WPA := wpa_supplicant.conf
-WPA += wpa_supplicant_wcn.conf
 WPA += wpa_supplicant
 PRODUCT_PACKAGES += $(WPA)
 
@@ -645,9 +618,6 @@ PRODUCT_PACKAGES += \
 # Connectivity
 PRODUCT_PACKAGES += \
     ConnectivityOverlay
-
-LIB_NL := libnl_2
-PRODUCT_PACKAGES += $(LIB_NL)
 
 # Audio effects
 PRODUCT_PACKAGES += \
@@ -801,9 +771,8 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.frameworks.stats@1.0.vendor:64 \
-    android.hardware.biometrics.fingerprint@2.2.vendor:64 \
-    android.hardware.biometrics.fingerprint@2.1-service.fpc
+    android.frameworks.stats@1.0.vendor:64
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.fingerprint.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.fingerprint.sh \
 
@@ -932,10 +901,6 @@ ifneq ($(filter crosshatch,$(KSCOPE_BUILD)),)
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     device/google/crosshatch/crosshatch/overlay-kscope/frameworks/base/packages/overlays/NoCutoutOverlay
 endif
-
-# pixel atrace HAL
-PRODUCT_PACKAGES += \
-    android.hardware.atrace@1.0-service.pixel
 
 # fastbootd
 PRODUCT_PACKAGES += \
