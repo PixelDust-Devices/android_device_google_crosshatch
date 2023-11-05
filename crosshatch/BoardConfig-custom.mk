@@ -5,3 +5,5 @@
 #
 
 include device/google/crosshatch/BoardConfig-vendor.mk
+
+include vendor/google/crosshatch/BoardConfigVendor.mk
