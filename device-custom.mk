@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/display
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-custom
 
@@ -70,10 +74,17 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@1.1.vendor \
-    vendor.display.config@1.2.vendor \
-    vendor.display.config@1.3.vendor
+    vendor.display.config@1.0 \
+    vendor.display.config@1.1 \
+    vendor.display.config@1.2 \
+    vendor.display.config@1.3 \
+    vendor.display.config@1.4 \
+    vendor.display.config@1.5 \
+    vendor.display.config@1.6 \
+    vendor.display.config@1.7 \
+    vendor.display.config@1.8 \
+    vendor.display.config@2.0 \
+    vendor.qti.hardware.systemhelper@1.0
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -84,11 +95,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.identity-support-lib.vendor:64 \
     android.hardware.identity_credential.xml
-
-# Nos
-PRODUCT_PACKAGES += \
-    libkeymaster4support.vendor:64 \
-    libkeymaster4_1support.vendor:64
 
 # Json
 PRODUCT_PACKAGES += \
@@ -109,7 +115,7 @@ PRODUCT_PACKAGES += \
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    libprotobuf-cpp-full-vendorcompat
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
@@ -118,7 +124,7 @@ PRODUCT_PACKAGES += \
 
 # Misc interfaces
 PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
+    android.frameworks.sensorservice@1.0.vendor:32 \
     android.frameworks.stats@1.0.vendor:64 \
     android.hardware.authsecret@1.0.vendor:64 \
     android.hardware.biometrics.fingerprint@2.1.vendor:64 \
@@ -126,7 +132,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor \
     android.hardware.keymaster@3.0.vendor:32 \
     android.hardware.keymaster@4.0.vendor:32 \
-    android.hardware.keymaster@4.1.vendor:64 \
     android.hardware.neuralnetworks@1.0.vendor:64 \
     android.hardware.neuralnetworks@1.1.vendor:64 \
     android.hardware.neuralnetworks@1.2.vendor:64 \
@@ -139,7 +144,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.3.vendor:64 \
     android.hardware.sensors@1.0.vendor:32 \
     android.hardware.sensors@2.0.vendor \
-    android.hardware.thermal@1.0.vendor:64 \
     android.hardware.weaver@1.0.vendor:64 \
     android.hardware.wifi@1.1.vendor:64 \
     android.hardware.wifi@1.2.vendor:64 \
@@ -159,7 +163,3 @@ PRODUCT_PACKAGES += \
     android.hardware.power-V1-ndk_platform.vendor:64 \
     android.hardware.rebootescrow-V1-ndk_platform.vendor:64 \
     libgui_shim
-
-# VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full.so
