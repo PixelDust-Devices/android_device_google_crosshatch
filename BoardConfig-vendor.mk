@@ -18,6 +18,9 @@ TARGET_KERNEL_LLVM_BINUTILS := false
 TARGET_KERNEL_SOURCE := kernel/google/msm-4.9
 TARGET_NEEDS_DTBOIMAGE := true
 
+# Disable sparse for ext images
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
 # Partitions
 AB_OTA_PARTITIONS += \
     vendor
