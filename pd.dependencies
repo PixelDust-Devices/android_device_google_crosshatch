@@ -1,15 +1,9 @@
 [
     {
-        "target_path":  "device/google/crosshatch-sepolicy",
-        "repository":   "android_device_google_crosshatch-sepolicy",
-        "remote":       "pdd",
-        "revision":     "13"
-    },
-    {
-        "target_path":  "kernel/google/bluecross",
-        "repository":   "android_kernel_google_bluecross",
-        "remote":       "pdd",
-        "revision":     "13"
+        "target_path":  "external/wpa_supplicant_8",
+        "repository":   "platform/external/wpa_supplicant_8",
+        "remote":       "aosp",
+        "revision":     "android14-platform-release"
     },
     {
          "target_path": "packages/apps/GoogleCamera",
@@ -18,9 +12,9 @@
          "revision":    "thirteen"
     },
     {
-        "target_path":  "vendor/google",
-        "repository":   "android_vendor_google",
-        "remote":       "pdd",
-        "revision":     "13"
+        "target_path":  "vendor/google/blueline",
+        "repository":   "TheMuppets/proprietary_vendor_google_blueline",
+        "remote":       "github",
+        "revision":     "lineage-21"
     }
 ]
